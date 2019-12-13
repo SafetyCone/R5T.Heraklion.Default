@@ -3,11 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R5T.Heraklion.Default.Construction", "R5T.Heraklion.Default.Construction\R5T.Heraklion.Default.Construction.csproj", "{6151D28B-C631-4245-B4CC-0DB065EEF111}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "R5T.Heraklion.Default.Construction", "R5T.Heraklion.Default.Construction\R5T.Heraklion.Default.Construction.csproj", "{6151D28B-C631-4245-B4CC-0DB065EEF111}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R5T.Heraklion.Default", "R5T.Heraklion.Default\R5T.Heraklion.Default.csproj", "{C0A9FF3E-EDDA-4EBA-BA4C-C6D633A98693}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "R5T.Heraklion.Default", "R5T.Heraklion.Default\R5T.Heraklion.Default.csproj", "{C0A9FF3E-EDDA-4EBA-BA4C-C6D633A98693}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R5T.Heraklion.Default.Testing", "R5T.Heraklion.Default.Testing\R5T.Heraklion.Default.Testing.csproj", "{95A3C811-13B1-4C36-85C8-F2FE8C3E2AAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "R5T.Heraklion.Default.Testing", "R5T.Heraklion.Default.Testing\R5T.Heraklion.Default.Testing.csproj", "{95A3C811-13B1-4C36-85C8-F2FE8C3E2AAA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Dependencies", "_Dependencies", "{DF545FE3-C44E-44B7-AC93-6DFC8569E9C8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "R5T.Heraklion", "..\..\R5T.Heraklion\source\R5T.Heraklion\R5T.Heraklion.csproj", "{91D80CC8-8E8E-4E8E-9EC7-1A0875765ACA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "R5T.Piraeus", "..\..\R5T.Piraeus\source\R5T.Piraeus\R5T.Piraeus.csproj", "{56B5600F-1384-4B6D-A625-CE64078B1D31}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,9 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{6151D28B-C631-4245-B4CC-0DB065EEF111}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -58,5 +61,39 @@ Global
 		{95A3C811-13B1-4C36-85C8-F2FE8C3E2AAA}.Release|x64.Build.0 = Release|Any CPU
 		{95A3C811-13B1-4C36-85C8-F2FE8C3E2AAA}.Release|x86.ActiveCfg = Release|Any CPU
 		{95A3C811-13B1-4C36-85C8-F2FE8C3E2AAA}.Release|x86.Build.0 = Release|Any CPU
+		{91D80CC8-8E8E-4E8E-9EC7-1A0875765ACA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91D80CC8-8E8E-4E8E-9EC7-1A0875765ACA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91D80CC8-8E8E-4E8E-9EC7-1A0875765ACA}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{91D80CC8-8E8E-4E8E-9EC7-1A0875765ACA}.Debug|x64.Build.0 = Debug|Any CPU
+		{91D80CC8-8E8E-4E8E-9EC7-1A0875765ACA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{91D80CC8-8E8E-4E8E-9EC7-1A0875765ACA}.Debug|x86.Build.0 = Debug|Any CPU
+		{91D80CC8-8E8E-4E8E-9EC7-1A0875765ACA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91D80CC8-8E8E-4E8E-9EC7-1A0875765ACA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91D80CC8-8E8E-4E8E-9EC7-1A0875765ACA}.Release|x64.ActiveCfg = Release|Any CPU
+		{91D80CC8-8E8E-4E8E-9EC7-1A0875765ACA}.Release|x64.Build.0 = Release|Any CPU
+		{91D80CC8-8E8E-4E8E-9EC7-1A0875765ACA}.Release|x86.ActiveCfg = Release|Any CPU
+		{91D80CC8-8E8E-4E8E-9EC7-1A0875765ACA}.Release|x86.Build.0 = Release|Any CPU
+		{56B5600F-1384-4B6D-A625-CE64078B1D31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56B5600F-1384-4B6D-A625-CE64078B1D31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56B5600F-1384-4B6D-A625-CE64078B1D31}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{56B5600F-1384-4B6D-A625-CE64078B1D31}.Debug|x64.Build.0 = Debug|Any CPU
+		{56B5600F-1384-4B6D-A625-CE64078B1D31}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{56B5600F-1384-4B6D-A625-CE64078B1D31}.Debug|x86.Build.0 = Debug|Any CPU
+		{56B5600F-1384-4B6D-A625-CE64078B1D31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56B5600F-1384-4B6D-A625-CE64078B1D31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56B5600F-1384-4B6D-A625-CE64078B1D31}.Release|x64.ActiveCfg = Release|Any CPU
+		{56B5600F-1384-4B6D-A625-CE64078B1D31}.Release|x64.Build.0 = Release|Any CPU
+		{56B5600F-1384-4B6D-A625-CE64078B1D31}.Release|x86.ActiveCfg = Release|Any CPU
+		{56B5600F-1384-4B6D-A625-CE64078B1D31}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{91D80CC8-8E8E-4E8E-9EC7-1A0875765ACA} = {DF545FE3-C44E-44B7-AC93-6DFC8569E9C8}
+		{56B5600F-1384-4B6D-A625-CE64078B1D31} = {DF545FE3-C44E-44B7-AC93-6DFC8569E9C8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2509EC31-B45F-4367-A4C2-E40EE881B2A4}
 	EndGlobalSection
 EndGlobal
