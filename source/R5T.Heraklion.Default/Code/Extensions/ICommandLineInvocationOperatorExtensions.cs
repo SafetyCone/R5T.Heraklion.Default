@@ -9,7 +9,7 @@ namespace R5T.Heraklion.Default
 {
     public static class ICommandLineInvocationOperatorExtensions
     {
-        public static void Execute(this ICommandLineInvocationOperator commandLineOperator, string executableFilePath, ICommandBuilderContext commandBuilderContext, TextWriter writer)
+        public static OutputAndError ExecuteString(this ICommandLineInvocationOperator commandLineOperator, string executableFilePath, ICommandBuilderContext commandBuilderContext, TextWriter writer)
         {
             var arguments = commandBuilderContext.BuildCommand();
 
@@ -21,11 +21,30 @@ namespace R5T.Heraklion.Default
             {
                 throw new Exception($"Execution failed. Error:\n{result.GetErrorText()}\nOutput:\n{result.GetOutputText()}\nArguments:\n{arguments}");
             }
-            else
+
+            var outputText = result.GetOutputText();
+            var errorText = result.GetErrorText();
+
+            var output = new OutputAndError()
             {
-                writer.WriteLine(result.GetOutputText());
-                writer.WriteLine(result.GetErrorText());
-            }
+                Output = outputText,
+                Error = errorText,
+            };
+            return output;
+        }
+
+        public static OutputAndError ExecuteString(this ICommandLineInvocationOperator commandLineOperator, string executableFilePath, ICommandBuilderContext commandBuilderContext)
+        {
+            var output = commandLineOperator.ExecuteString(executableFilePath, commandBuilderContext, Console.Out);
+            return output;
+        }
+
+        public static void Execute(this ICommandLineInvocationOperator commandLineOperator, string executableFilePath, ICommandBuilderContext commandBuilderContext, TextWriter writer)
+        {
+            var output = commandLineOperator.ExecuteString(executableFilePath, commandBuilderContext, writer);
+
+            writer.WriteLine(output.Output);
+            writer.WriteLine(output.Error);
         }
 
         public static void Execute(this ICommandLineInvocationOperator commandLineOperator, string executableFilePath, ICommandBuilderContext commandBuilderContext)
