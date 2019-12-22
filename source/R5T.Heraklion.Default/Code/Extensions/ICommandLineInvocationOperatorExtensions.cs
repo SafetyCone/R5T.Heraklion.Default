@@ -9,11 +9,11 @@ namespace R5T.Heraklion.Default
 {
     public static class ICommandLineInvocationOperatorExtensions
     {
-        public static OutputAndError ExecuteString(this ICommandLineInvocationOperator commandLineOperator, string executableFilePath, ICommandBuilderContext commandBuilderContext, TextWriter writer)
+        public static OutputAndError ExecuteAndGetOutput(this ICommandLineInvocationOperator commandLineOperator, string executableFilePath, ICommandBuilderContext commandBuilderContext, TextWriter writer, bool suppresConsoleOutput = false)
         {
             var arguments = commandBuilderContext.BuildCommand();
 
-            var invocation = CommandLineInvocation.New(executableFilePath, arguments);
+            var invocation = CommandLineInvocation.New(executableFilePath, arguments, suppresConsoleOutput);
 
             var result = commandLineOperator.Run(invocation);
 
@@ -33,23 +33,23 @@ namespace R5T.Heraklion.Default
             return output;
         }
 
-        public static OutputAndError ExecuteString(this ICommandLineInvocationOperator commandLineOperator, string executableFilePath, ICommandBuilderContext commandBuilderContext)
+        public static OutputAndError ExecuteAndGetOutput(this ICommandLineInvocationOperator commandLineOperator, string executableFilePath, ICommandBuilderContext commandBuilderContext, bool suppresConsoleOutput = false)
         {
-            var output = commandLineOperator.ExecuteString(executableFilePath, commandBuilderContext, Console.Out);
+            var output = commandLineOperator.ExecuteAndGetOutput(executableFilePath, commandBuilderContext, Console.Out, suppresConsoleOutput);
             return output;
         }
 
-        public static void Execute(this ICommandLineInvocationOperator commandLineOperator, string executableFilePath, ICommandBuilderContext commandBuilderContext, TextWriter writer)
+        public static void Execute(this ICommandLineInvocationOperator commandLineOperator, string executableFilePath, ICommandBuilderContext commandBuilderContext, TextWriter writer, bool suppresConsoleOutput = false)
         {
-            var output = commandLineOperator.ExecuteString(executableFilePath, commandBuilderContext, writer);
+            var output = commandLineOperator.ExecuteAndGetOutput(executableFilePath, commandBuilderContext, writer, suppresConsoleOutput);
 
             writer.WriteLine(output.Output);
             writer.WriteLine(output.Error);
         }
 
-        public static void Execute(this ICommandLineInvocationOperator commandLineOperator, string executableFilePath, ICommandBuilderContext commandBuilderContext)
+        public static void Execute(this ICommandLineInvocationOperator commandLineOperator, string executableFilePath, ICommandBuilderContext commandBuilderContext, bool suppresConsoleOutput = false)
         {
-            commandLineOperator.Execute(executableFilePath, commandBuilderContext, Console.Out);
+            commandLineOperator.Execute(executableFilePath, commandBuilderContext, Console.Out, suppresConsoleOutput);
         }
     }
 }
